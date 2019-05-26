@@ -8,6 +8,52 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {}
+// my solution
+// function chunk(array, size) {
+//     //setting a blank array to fill
+//     const newArray = [];
+//     //make a small array using slice by size 
+//     for (let i = 0; i < array.length; i+=size) {
+//         newArray.push(array.slice(i, i + size))
+//     }
+//     //newArray.push(smallArray)
+//     console.log(newArray)
+//     return newArray
+// }
+
+// module.exports = chunk;
+
+
+// function chunk(array, size) {
+//     const newArray = [];
+//     // iterating through each number in the array
+//     for (let element of array){
+//         //create a last position of an empty array to put elements into
+//         const last = newArray[newArray.length - 1]
+//         // push elements as an array in certain positontions
+//         if (!last || last.length === size){
+//             newArray.push([element]);
+//         } else{
+//             last.push(element)
+//         }
+//     }
+    
+//     return newArray
+// }
+
+// module.exports = chunk;
+
+function chunk(array, size) {
+    const newArray = [];
+    let index = 0;
+
+    while(index < array.length){
+        newArray.push(array.slice(index, index + size));
+        index += size;
+    }
+    
+    return newArray
+}
 
 module.exports = chunk;
+

@@ -12,9 +12,11 @@ function reverse(str) {
     for (let char of str) {
         arr.unshift(char)
     }; 
+    debugger;
     return arr.toString().replace(/,/g, "");
 }
 
+reverse('asdf')
 
 module.exports = reverse;
 
